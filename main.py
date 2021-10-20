@@ -1,4 +1,4 @@
-from functions import get_hands_of_cards, is_four_of_a_kind, is_full_house, is_straight, is_three_of_a_kind, is_two_pair, is_pair, find_high_card, compare_hands
+from functions import get_hands_of_cards, compare_hands
 
 def main():
     choice = input("Enter 'E' without quotes to input your own hand,\nor any other key to auto-play the game \n")
