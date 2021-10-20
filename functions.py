@@ -3,6 +3,10 @@ import random
 
 def get_full_shuffled_deck_of_cards():
 
+    """
+    This function returns a 52 card deck plus one wild card as a list
+    """
+
     #Make a deck of cards list, and a copy to modify
     deck_of_cards_without_wildcard = [PlayingCard(value, suit) for value in PlayingCard.values for suit in PlayingCard.suits]
     full_deck_of_cards = deck_of_cards_without_wildcard[:]
@@ -34,11 +38,17 @@ def get_hands_of_cards(number_of_hands, cards_per_hand):
     return card_hands
 
 def is_four_of_a_kind(hand):
+    """
+    This functions takes the hand (list) and returns true if it is four of a kind
+    """
     for card in hand:
         if hand.count(card) is 4:
             return True
 
 def is_full_house(hand):
+    """
+    This functions takes the hand (list) and returns true if it is a full house
+    """
     two_cards = False
     three_cards = False
     for card in hand:
@@ -51,6 +61,9 @@ def is_full_house(hand):
         return True
 
 def is_straight(hand):
+    """
+    This functions takes the hand (list) and returns true if it is a straight
+    """
     int_converted_hand = []
     for card in hand:
         if card == 'T':
@@ -71,6 +84,9 @@ def is_straight(hand):
         return True
 
 def is_three_of_a_kind(hand):
+    """
+    This functions takes the hand (list) and returns true if it is three of a kind
+    """
     two_cards = False
     three_cards = False
     for card in hand:
@@ -84,6 +100,9 @@ def is_three_of_a_kind(hand):
             return True
 
 def is_two_pair(hand):
+    """
+    This functions takes the hand (list) and returns true if the hand has two pair
+    """
     pair_count = 0
     for card in hand:
         if hand.count(card) is 2:
@@ -93,6 +112,9 @@ def is_two_pair(hand):
 
 
 def is_pair(hand):
+    """
+    This functions takes the hand (list) and returns true if it has one pair
+    """
     pair_count = 0
     for card in hand:
         if hand.count(card) is 2:
@@ -101,12 +123,16 @@ def is_pair(hand):
         return True
 
 def find_high_card(hand):
+    """
+    This functions takes the hand (list) and returns the highest card
+    """
     high_card = max(hand)
     return high_card
 
-
-
 def compare_hands(hands):
+    """
+    This functions takes the hand (list), finds the score of the hand, compares the scores and tell you who won (or if it is a tie)
+    """
     hand_scores = []
     for index, hand in enumerate(hands):
         print(f'Hand number {index + 1}: {hand}')
